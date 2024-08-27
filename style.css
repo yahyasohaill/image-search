@@ -1,0 +1,137 @@
+/* Basic reset and styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #0f0f0f; /* Darker, more neutral background color */
+    color: #e0e0e0; /* Light text color for contrast */
+    text-align: center; /* Center-align the text and form */
+    padding: 0 10px; /* Add padding to prevent content from touching the edges */
+}
+
+h1 {
+    margin-top: 20px; /* Add some space above the heading */
+    color: #e0e0e0; /* Light color for heading */
+    font-size: 24px; /* Adjust font size for better readability on mobile */
+}
+
+#search-form {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center items horizontally */
+    background: #1e1e1e; /* Dark background for the form */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 20px auto; /* Center the form horizontally */
+    max-width: 600px; /* Limit the width of the form */
+}
+
+#search-box {
+    border: 1px solid #444; /* Darker border color */
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 10px; /* Space between input and button */
+    font-size: 16px;
+    color: #e0e0e0; /* Light text color */
+    background-color: #333; /* Dark background for input field */
+    flex: 1; /* Make input field flexible */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+}
+
+#more-btn {
+    margin: 40px auto;
+    display: none; /* Hide button by default */
+}
+
+.btns {
+    border: none;
+    background-color: #e63946; /* Bright, bold red color */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.btns:hover {
+    background-color: #d62839; /* Slightly darker red on hover */
+}
+
+.btns:focus {
+    outline: 2px solid #f1faee; /* Add outline for better visibility when focused */
+}
+
+#images-display {
+    width: 100%;
+    margin: 20px auto; /* Center the grid and add margin */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Adjusted gap for better spacing */
+}
+
+#images-display img {
+    width: 100%;
+    height: 230px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's width */
+}
+/* Add this to your style.css */
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.loading-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #eee;
+}
+
+.loading-fill {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0; /* Start with 0 width */
+    transition: width 0.5s ease;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+@media (max-width: 800px) {
+    #search-form {
+        flex-direction: column; /* Stack form elements vertically on smaller screens */
+        align-items: stretch; /* Allow input and button to stretch */
+    }
+
+    #search-box {
+        margin-bottom: 10px; /* Margin below input for spacing with the button */
+    }
+
+    .btns {
+        width: 100%; /* Full width for button to match form width */
+    }
+
+    #more-btn {
+        margin: 20px auto; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 20px; /* Smaller font size for smaller screens */
+    }
+
+    #images-display {
+        grid-template-columns: 1fr; /* Single column layout on very small screens */
+    }
+}
