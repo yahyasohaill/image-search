@@ -12,7 +12,7 @@ let search = "";
 let page = 1;
 async function searchImg(){
    search = searchBox.value;
-   const url = `https://api.unsplash.com/search/collections?page=${page}&query=${search}&client_id=${accessKey}&per_page=15`;
+   const url = `https://api.unsplash.com/search/collections?page=${page}&query=${search}&client_id=${accessKey}&per_page=18`;
 
    const response = await fetch(url);
    const data = await response.json();
